@@ -25,7 +25,7 @@ const CreatePage = () => {
     navigate("/")
    } catch (error) {
     console.log("Error creating note", error);
-      if (error.response.status === 429) {
+      if (error.response?.status === 429) {
         toast.error("Slow down! You're creating notes too fast", {
           duration: 4000,
           icon: "💀",
@@ -63,7 +63,7 @@ const CreatePage = () => {
 
                <div className="form-control mb-4">
                 <label  className="label">
-                  <span className="label-text">Title</span>
+                  <span className="label-text">Content</span>
                 </label>
                 <textarea 
                 placeholder="Write your note here..."

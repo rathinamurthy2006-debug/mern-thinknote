@@ -12,7 +12,7 @@ export async function getAllNotes(req, res) {
 export async function getANotebyid(req, res) {
   try {
     const note = await Note.findById(req.params.id);
-    if (!note) returnres.status(404).json({ msg: "Note is not Found" });
+    if (!note) return res.status(404).json({ msg: "Note is not Found" });
     res.status(200).json(note);
   } catch (e) {
     console.error("Error getANotebyid in  controller", e);

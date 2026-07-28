@@ -15,7 +15,6 @@ export const HomePage = () => {
     const fetchNotes = async () => {
       try {
         const res = await api.get("/notes");
-        console.log(res.data);
         setNotes(res.data);
         setIsRateLimited(false);
       } catch (error) {
@@ -39,7 +38,7 @@ export const HomePage = () => {
       <Navbar />
       {isRateLimited && <RateLimitedUI />}
 
-      <div className="mx-w-7xl mx-auto p-4 mt-6">
+      <div className="max-w-7xl mx-auto p-4 mt-6">
         {loading && <div className="text-center text-primary py-10">Loading Notes...</div>}
 
         {notes.length=== 0&&!isRateLimited &&<NoteNotFound/>}
