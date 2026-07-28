@@ -1,4 +1,3 @@
----
 
 ```markdown
 # 📒 ThinkNote – MERN Stack Note‑Taking App
